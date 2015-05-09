@@ -1,0 +1,1 @@
+keytool -import -trustcacerts -alias ttapocp -file C:\Users\Administrator\Desktop\ttapocp.cer -keystore "%JAVA_HOME%/jre/lib/security/cacerts" 

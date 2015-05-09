@@ -1,0 +1,56 @@
+package org.openstack4j.model.network;
+
+import java.util.List;
+
+import org.openstack4j.common.Buildable;
+import org.openstack4j.model.common.Resource;
+import org.openstack4j.model.network.builder.NetworkBuilder;
+
+/**
+ * An OpenStack (Neutron) network
+ * 
+ * @author Jeremy Unruh
+ */
+public interface Network extends Resource, Buildable<NetworkBuilder> {
+
+	/**
+	 * @return the status of the network
+	 */
+	State getStatus();
+
+	/**
+	 * @return list of subnet identifiers associated with the network
+	 */
+	List<String> getSubnets();
+
+	/**
+	 * @return the physical network provider or null
+	 */
+	String getProviderPhyNet();
+
+	/**
+	 * @return true if the administrative state is up
+	 */
+	boolean isAdminStateUp();
+
+	/**
+	 * @return the network type
+	 */
+	NetworkType getNetworkType();
+
+	/**
+	 * @return true if the router is external
+	 */
+	boolean isRouterExternal();
+
+	/**
+	 * @return true if the network is shared
+	 */
+	boolean isShared();
+
+	/**
+	 * @return the provider segmentation identifier
+	 */
+	String getProviderSegID();
+
+}
